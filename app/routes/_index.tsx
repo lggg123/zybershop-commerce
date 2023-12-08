@@ -6,6 +6,7 @@ import type {
   FeaturedCollectionFragment,
   RecommendedProductsQuery,
 } from 'storefrontapi.generated';
+import Hero from '../components/Hero';
 
 export const meta: MetaFunction = () => {
   return [{title: 'Hydrogen | Home'}];
@@ -24,6 +25,15 @@ export default function Homepage() {
   const data = useLoaderData<typeof loader>();
   return (
     <div className="home">
+      <Hero 
+        title="Sehen Sie sich unsere Auswahl an" 
+        subtitle=""
+        imageUrl='/background.png'
+        ctaLink=''
+        ctaLink2=''
+        ctaText='Jezt einkaufen'
+        ctaText2='Bestseller'
+      />
       <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} />
     </div>

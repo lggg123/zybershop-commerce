@@ -11,7 +11,7 @@ type Viewport = 'desktop' | 'mobile';
 export function Header({header, isLoggedIn, cart}: HeaderProps) {
   const {shop, menu} = header;
   return (
-    <header className="header">
+    <header className="header flex justify-center items-center">
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
         <strong>{shop.name}</strong>
       </NavLink>
@@ -45,7 +45,7 @@ export function HeaderMenu({
   }
 
   return (
-    <nav className={className} role="navigation">
+    <nav className={`flex-grow flex justify-center ${className}`} role="navigation">
       {viewport === 'mobile' && (
         <NavLink
           end
@@ -69,7 +69,7 @@ export function HeaderMenu({
             : item.url;
         return (
           <NavLink
-            className="header-menu-item"
+            className="header-menu-item flex justify-center"
             end
             key={item.id}
             onClick={closeAside}

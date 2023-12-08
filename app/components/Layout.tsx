@@ -13,6 +13,7 @@ import {
   PredictiveSearchForm,
   PredictiveSearchResults,
 } from '~/components/Search';
+import './main.css';
 
 export type LayoutProps = {
   cart: Promise<CartApiQueryFragment | null>;
